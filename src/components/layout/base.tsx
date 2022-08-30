@@ -17,7 +17,9 @@ const BaseLayout: React.FC<IBaseLayout> = ({
   const content = (
     <Stack direction="column" space={30}>
       <Link href="/">
-        <Image height={30} src={logo} alt="AgroDo" />
+        <a style={{ alignSelf: 'center' }}>
+          <Image height={30} src={logo} alt="AgroDo" />
+        </a>
       </Link>
       {children}
     </Stack>
