@@ -1,5 +1,6 @@
 import moment from 'moment'
 import { NextPage } from 'next'
+import Head from 'next/head'
 import { useCallback } from 'react'
 import { Container } from 'styled-bootstrap-grid'
 import Alert from '../../../components/alert'
@@ -28,18 +29,23 @@ const CreateCheck: NextPage = () => {
   )
 
   return (
-    <BaseLayout withContainer={false}>
-      <Container>
-        <CheckForm
-          title="Novo"
-          defaultValues={{
-            created_at: moment().toISOString(),
-            updated_at: moment().toISOString(),
-          }}
-          onSubmit={onSubmit}
-        />
-      </Container>
-    </BaseLayout>
+    <>
+      <Head>
+        <title>Novo | Agro Do</title>
+      </Head>
+      <BaseLayout withContainer={false}>
+        <Container>
+          <CheckForm
+            title="Novo"
+            defaultValues={{
+              created_at: moment().toISOString(),
+              updated_at: moment().toISOString(),
+            }}
+            onSubmit={onSubmit}
+          />
+        </Container>
+      </BaseLayout>
+    </>
   )
 }
 

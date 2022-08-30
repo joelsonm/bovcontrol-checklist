@@ -6,14 +6,20 @@ import http from '../services'
 import CheckList from '../components/check/list'
 import BaseLayout from '../components/layout/base'
 import SearchProvider from '../components/contexts/search'
+import Head from 'next/head'
 
 const Home: NextPage<{ checks: Check[] }> = ({ checks }) => {
   return (
-    <BaseLayout withContainer={false}>
-      <SearchProvider>
-        <CheckList checks={checks} />
-      </SearchProvider>
-    </BaseLayout>
+    <>
+      <Head>
+        <title>Agro Do</title>
+      </Head>
+      <BaseLayout withContainer={false}>
+        <SearchProvider>
+          <CheckList checks={checks} />
+        </SearchProvider>
+      </BaseLayout>
+    </>
   )
 }
 

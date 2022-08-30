@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next'
+import Head from 'next/head'
 import { useCallback } from 'react'
 import { Container } from 'styled-bootstrap-grid'
 import Alert from '../../../components/alert'
@@ -29,17 +30,22 @@ const DetailCheck: NextPage<{ check: Check }> = ({ check }) => {
   )
 
   return (
-    <BaseLayout withContainer={false}>
-      <Container>
-        <Stack direction="column" space={30}>
-          <Stack direction="row" space={5} align={'center'}>
-            <Caption>{check.farmer.name}</Caption>
-            <Chip>{check.type}</Chip>
+    <>
+      <Head>
+        <title>{check.farmer.name} | Agro Do</title>
+      </Head>
+      <BaseLayout withContainer={false}>
+        <Container>
+          <Stack direction="column" space={30}>
+            <Stack direction="row" space={5} align={'center'}>
+              <Caption>{check.farmer.name}</Caption>
+              <Chip>{check.type}</Chip>
+            </Stack>
+            <CheckForm defaultValues={check} onSubmit={onSubmit} />
           </Stack>
-          <CheckForm defaultValues={check} onSubmit={onSubmit} />
-        </Stack>
-      </Container>
-    </BaseLayout>
+        </Container>
+      </BaseLayout>
+    </>
   )
 }
 
