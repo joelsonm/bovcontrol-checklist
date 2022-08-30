@@ -11,7 +11,6 @@
 ## API do desafio
 
 - [API](http://challenge-front-end.bovcontrol.com/documents/#/). Disponível para envio e consulta de checklists.
-
 ## Variavel de Ambiente
 ```env
 NEXT_PUBLIC_ENV_VARIABLE=http://challenge-front-end.bovcontrol.com/v1
