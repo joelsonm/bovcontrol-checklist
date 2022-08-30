@@ -4,6 +4,7 @@ import { Box } from '../styles/box'
 import { Stack } from '../styles/stack'
 
 import logo from '../../assets/logo.svg'
+import Link from 'next/link'
 
 interface IBaseLayout {
   withContainer?: boolean
@@ -15,7 +16,9 @@ const BaseLayout: React.FC<IBaseLayout> = ({
 }) => {
   const content = (
     <Stack direction="column" space={30}>
-      <Image height={30} src={logo} alt="AgroDo" />
+      <Link href="/">
+        <Image height={30} src={logo} alt="AgroDo" />
+      </Link>
       {children}
     </Stack>
   )
